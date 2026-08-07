@@ -1,0 +1,483 @@
+<!-- NAVBAR -->
+<nav class="navbar" [class.scrolled]="scrolled" role="navigation" aria-label="Menu principal">
+  <div class="nav-container">
+    <a class="nav-logo" (click)="scrollTo('home')">
+      <img src="davvigaseagua_logo.jpg" alt="Davi Gás Logo" class="logo-img" />
+      <span class="logo-text">Davi <span class="logo-accent">Gás</span></span>
+    </a>
+
+    <ul class="nav-links" [class.open]="mobileMenuOpen">
+      <li><button class="nav-link" [class.active]="activeSection() === 'home'" (click)="scrollTo('home')">Início</button></li>
+      <li><button class="nav-link" [class.active]="activeSection() === 'produtos'" (click)="scrollTo('produtos')">Produtos</button></li>
+      <li><button class="nav-link" [class.active]="activeSection() === 'sobre'" (click)="scrollTo('sobre')">Sobre</button></li>
+      <li><button class="nav-link" [class.active]="activeSection() === 'beneficios'" (click)="scrollTo('beneficios')">Vantagens</button></li>
+      <li><button class="nav-link" [class.active]="activeSection() === 'contato'" (click)="scrollTo('contato')">Contato</button></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a routerLink="/pedido" class="nav-pedido-btn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+        Fazer Pedido
+      </a>
+      <a href="https://wa.me/5589994205500" target="_blank" class="nav-whatsapp">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>Pedir Agora</span>
+      </a>
+    </div>
+
+    <button class="mobile-toggle" (click)="toggleMobileMenu()" [class.open]="mobileMenuOpen" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+  <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+  <div class="hero-container">
+    <div class="hero-content animate-on-scroll">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Entrega Rápida em Picos - PI
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-line-1">Gás e Água</span>
+        <span class="hero-line-2">com <span class="text-gradient">qualidade</span></span>
+        <span class="hero-line-3">e <span class="text-gradient">rapidez!</span></span>
+      </h1>
+      <p class="hero-subtitle">
+        Ligou, Chegou! Há mais de 20 anos levando gás de cozinha e água mineral
+        para as residências e comércios de Picos com eficiência e confiança.
+      </p>
+      <div class="hero-buttons">
+        <a routerLink="/pedido" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+          Fazer Pedido
+        </a>
+        <a href="https://wa.me/5589994205500" target="_blank" class="btn btn-whatsapp-hero">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pedir pelo WhatsApp
+        </a>
+        <a class="btn btn-secondary" (click)="scrollTo('produtos')">
+          Ver Produtos
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">20+</span>
+          <span class="stat-label">Anos de Experiência</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">10k+</span>
+          <span class="stat-label">Clientes Atendidos</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">⭐</span>
+          <span class="stat-label">Excelência em Entrega</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual animate-on-scroll">
+      <div class="hero-image-wrapper">
+        <img src="botijao13kg.webp" alt="Botijão de Gás 13kg" class="hero-product-img hero-product-1" />
+        <img src="galaodeagua.webp" alt="Galão de Água" class="hero-product-img hero-product-2" />
+        <div class="hero-glow"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 60L60 54C120 48 240 36 360 30C480 24 600 24 720 28C840 32 960 40 1080 44C1200 48 1320 48 1380 48L1440 48V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+<!-- PRODUTOS SECTION -->
+<section id="produtos" class="products-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">Nossos Produtos</span>
+      <h2 class="section-title">Qualidade que você <span class="text-gradient">confia</span></h2>
+      <p class="section-desc">Oferecemos os melhores produtos com os maiores padrões de segurança e qualidade para sua residência e comércio.</p>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card animate-on-scroll">
+        <div class="product-image-wrap">
+          <div class="product-badge">Mais Vendido</div>
+          <img src="botijao13kg.webp" alt="Botijão de Gás 13kg" class="product-img" />
+          <div class="product-image-bg"></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Gás de Cozinha</div>
+          <h3 class="product-name">Botijão P-13</h3>
+          <p class="product-desc">O botijão de 13kg é o mais utilizado nas residências. Ideal para cozinhas domésticas, proporciona autonomia e economia para o seu dia a dia.</p>
+          <div class="product-features">
+            <span class="feature">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              13kg de Gás
+            </span>
+            <span class="feature">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Certificado
+            </span>
+            <span class="feature">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Entrega Rápida
+            </span>
+          </div>
+          <a routerLink="/pedido" class="btn btn-product">
+            Pedir Agora
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="product-card animate-on-scroll">
+        <div class="product-image-wrap">
+          <img src="botijao45kg.webp" alt="Botijão de Gás 45kg" class="product-img" />
+          <div class="product-image-bg"></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Gás de Cozinha</div>
+          <h3 class="product-name">Botijão P-45</h3>
+          <p class="product-desc">O botijão de 45kg é perfeito para restaurantes, padarias e comércios que demandam maior consumo de gás de cozinha.</p>
+          <div class="product-features">
+            <span class="feature">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              45kg de Gás
+            </span>
+            <span class="feature">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Para Comércios
+            </span>
+            <span class="feature">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Grande Capacidade
+            </span>
+          </div>
+          <a routerLink="/pedido" class="btn btn-product">
+            Pedir Agora
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="product-card animate-on-scroll">
+        <div class="product-image-wrap">
+          <div class="product-badge badge-blue">Novidade</div>
+          <img src="galaodeagua.webp" alt="Galão de Água" class="product-img" />
+          <div class="product-image-bg"></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Água Mineral</div>
+          <h3 class="product-name">Galão de Água</h3>
+          <p class="product-desc">Água mineral natural pura e refrescante. Perfeita para beber, cozinhar e preparar suas refeições com total segurança e qualidade.</p>
+          <div class="product-features">
+            <span class="feature">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Água Pura
+            </span>
+            <span class="feature">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Mineral Natural
+            </span>
+            <span class="feature">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Entrega em Casa
+            </span>
+          </div>
+          <a routerLink="/pedido" class="btn btn-product">
+            Pedir Agora
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE SECTION -->
+<section id="sobre" class="about-section">
+  <div class="about-bg-pattern"></div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images animate-on-scroll">
+        <div class="about-img-card about-img-main">
+          <img src="davvigaseagua_logo.jpg" alt="Davi Gás e Água" />
+        </div>
+
+        <div class="about-float-card">
+          <div class="float-icon">🔥</div>
+          <div class="float-text">
+            <strong>20+ Anos</strong>
+            <span>de Confiança</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content animate-on-scroll">
+        <span class="section-tag">Sobre Nós</span>
+        <h2 class="section-title">Conheça a <span class="text-gradient">Davi Gás</span></h2>
+        <p class="about-text">
+          A <strong>Davi Gás</strong> é uma empresa familiar instalada no coração de Picos-PI, dedicada a fornecer gás de cozinha e água mineral de alta qualidade para residências e comércios da região.
+        </p>
+        <p class="about-text">
+          Com mais de <strong>20 anos de experiência</strong>, construímos uma reputação sólida baseada em confiança, rapidez no atendimento e compromisso com a satisfação dos nossos clientes.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="highlight-icon">🚚</div>
+            <div>
+              <strong>Entrega Rápida</strong>
+              <span>Ligou, Chegou! Entregamos com agilidade em toda Picos.</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">✅</div>
+            <div>
+              <strong>Qualidade Garantida</strong>
+              <span>Produtos certificados e com os maiores padrões de segurança.</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">🤝</div>
+            <div>
+              <strong>Atendimento Pessoal</strong>
+              <span>Equipe dedicada e pronta para atender suas necessidades.</span>
+            </div>
+          </div>
+        </div>
+        <a routerLink="/pedido" class="btn btn-primary">
+          Fale Conosco
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS SECTION -->
+<section id="beneficios" class="benefits-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">Por que nos escolher?</span>
+      <h2 class="section-title">Nossas <span class="text-gradient">Vantagens</span></h2>
+      <p class="section-desc">Motivos pelos quais milhares de clientes confiam na Davi Gás para abastecer seus lares e negócios.</p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card animate-on-scroll">
+        <div class="benefit-icon-wrap">
+          <div class="benefit-icon">⚡</div>
+        </div>
+        <h3>Entrega Expressa</h3>
+        <p>Ligou, Chegou! Entregamos seu gás e água com a maior rapidez possível em toda a cidade de Picos.</p>
+      </div>
+
+      <div class="benefit-card animate-on-scroll">
+        <div class="benefit-icon-wrap">
+          <div class="benefit-icon">🛡️</div>
+        </div>
+        <h3>Segurança Total</h3>
+        <p>Todos os nossos produtos possuem certificação e seguem rigorosos protocolos de segurança em armazenamento e transporte.</p>
+      </div>
+
+      <div class="benefit-card animate-on-scroll">
+        <div class="benefit-icon-wrap">
+          <div class="benefit-icon">💰</div>
+        </div>
+        <h3>Preço Justo</h3>
+        <p>Oferecemos os melhores preços do mercado com qualidade incomparável. Economia que você pode confiar.</p>
+      </div>
+
+      <div class="benefit-card animate-on-scroll">
+        <div class="benefit-icon-wrap">
+          <div class="benefit-icon">🕐</div>
+        </div>
+        <h3>Horário Flexível</h3>
+        <p>Atendemos você em horários convenientes, porque sabemos que seu tempo é valioso.</p>
+      </div>
+
+      <div class="benefit-card animate-on-scroll">
+        <div class="benefit-icon-wrap">
+          <div class="benefit-icon">👨‍👩‍👧‍👦</div>
+        </div>
+        <h3>Empresa Familiar</h3>
+        <p>Somos uma empresa familiar que entende a importância de tratar cada cliente como parte da nossa família.</p>
+      </div>
+
+      <div class="benefit-card animate-on-scroll">
+        <div class="benefit-icon-wrap">
+          <div class="benefit-icon">📱</div>
+        </div>
+        <h3>Fácil Contato</h3>
+        <p>Pedidos simples e rápidos pelo WhatsApp ou telefone. Atendimento personalizado e eficiente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="cta-bg-shapes">
+    <div class="cta-shape cta-shape-1"></div>
+    <div class="cta-shape cta-shape-2"></div>
+  </div>
+  <div class="container">
+    <div class="cta-content animate-on-scroll">
+      <h2>Pronto para fazer seu <span class="text-gradient">pedido?</span></h2>
+      <p>Não perca tempo! Entre em contato agora mesmo e receba seu gás e água rapidamente na sua casa.</p>
+      <div class="cta-buttons">
+        <a routerLink="/pedido" class="btn btn-cta">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+          Fazer Pedido Online
+        </a>
+        <a href="https://wa.me/5589994205500?text=Olá! Gostaria de fazer um pedido de gás/água" target="_blank" class="btn btn-cta-whatsapp">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pedir pelo WhatsApp
+        </a>
+        <a href="tel:+558934225726" class="btn btn-cta-outline">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Ligar Agora
+        </a>
+      </div>
+      <div class="cta-phones">
+        <div class="cta-phone">
+          <span>WhatsApp:</span> (89) 99420-5500
+        </div>
+        <div class="cta-phone">
+          <span>Fixo:</span> (89) 3422-5726
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO SECTION -->
+<section id="contato" class="contact-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">Contato</span>
+      <h2 class="section-title">Fale <span class="text-gradient">Conosco</span></h2>
+      <p class="section-desc">Estamos prontos para atender você! Entre em contato por qualquer um dos nossos canais.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card animate-on-scroll">
+        <div class="contact-icon">📱</div>
+        <h3>WhatsApp</h3>
+        <p>Pedidos e informações</p>
+        <a href="https://wa.me/5589994205500" target="_blank">(89) 99420-5500</a>
+      </div>
+
+      <div class="contact-card animate-on-scroll">
+        <div class="contact-icon">☎️</div>
+        <h3>Telefone Fixo</h3>
+        <p>Atendimento comercial</p>
+        <a href="tel:+558934225726">(89) 3422-5726</a>
+      </div>
+
+      <div class="contact-card animate-on-scroll">
+        <div class="contact-icon">📍</div>
+        <h3>Localização</h3>
+        <p>Picos - PI</p>
+        <a href="https://maps.google.com/?q=-7.07849,-41.47274" target="_blank">Rua Santa Rita, 1719</a>
+      </div>
+    </div>
+
+    <div class="map-container animate-on-scroll">
+      <iframe
+        src="https://maps.google.com/maps?q=Davi+G%C3%A1s,+Rua+Santa+Rita,+1719,+Picos,+PI&ll=-7.07849,-41.47274&z=17&hl=pt-BR&output=embed"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Localização da Davi Gás em Picos-PI">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 80L60 72C120 64 240 48 360 42C480 36 600 40 720 44C840 48 960 52 1080 50C1200 48 1320 40 1380 36L1440 32V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V80Z" fill="#0a1628"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="davvigaseagua_logo.jpg" alt="Davi Gás" class="footer-logo" />
+        <p>Gás de cozinha e água mineral com qualidade e rapidez em Picos-PI.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/5589994205500" target="_blank" class="social-link" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#home" (click)="scrollTo('home'); $event.preventDefault()">Início</a></li>
+          <li><a href="#produtos" (click)="scrollTo('produtos'); $event.preventDefault()">Produtos</a></li>
+          <li><a href="#sobre" (click)="scrollTo('sobre'); $event.preventDefault()">Sobre Nós</a></li>
+          <li><a href="#contato" (click)="scrollTo('contato'); $event.preventDefault()">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a routerLink="/pedido">Botijão P-13</a></li>
+          <li><a routerLink="/pedido">Botijão P-45</a></li>
+          <li><a routerLink="/pedido">Galão de Água</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contato</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>(89) 99420-5500</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>(89) 3422-5726</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Picos - PI</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Davi Gás. Todos os direitos reservados.</p>
+      <p class="footer-slogan">Ligou, Chegou! 🔥</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/5589994205500" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="whatsapp-tooltip">Precisa de ajuda?</span>
+</a>
