@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:davigaseagua": "node dist/davigaseagua/server/server.mjs"
+    "serve:ssr:davigaseagua": "node dist/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,
